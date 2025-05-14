@@ -14,5 +14,22 @@
       </div>
     </div>
     <script type="module" src="butterflies.js"></script>
+    <script type="module" src="butterflies.js"></script>
+    
+    <script>
+      // Fungsi untuk mengambil parameter dari URL
+      function getParameterFromUrl(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+      
+      // Ambil parameter 'nama' dari URL
+      const namaParam = getParameterFromUrl('nama');
+      
+      // Jika parameter ada, ganti teks di elemen h2
+      if (namaParam) {
+        document.getElementById('parameter').textContent = decodeURIComponent(namaParam);
+      }
+    </script>
   </body>
 </html>
