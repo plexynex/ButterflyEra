@@ -26,21 +26,17 @@
         document.getElementById('parameter').textContent = decodeURIComponent(namaParam);
       }
 
-      let isPlaying = false;
+      let currentAudio = null;
 
 document.body.addEventListener('click', function() {
-  if (!isPlaying) {
-    isPlaying = true;
-    const audio = new Audio('ocrFytBgIFZQVcyrtf8dWMnGnyvdeD9JVOEgCB.m4a');
-    audio.play()
-      .then(() => {
-        isPlaying = false;
-      })
-      .catch(error => {
-        console.error("Gagal memutar audio:", error);
-        isPlaying = false;
-      });
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0; // Reset waktu audio ke awal
   }
+  
+  currentAudio = new Audio('ocrFytBgIFZQVcyrtf8dWMnGnyvdeD9JVOEgCB.m4a');
+  currentAudio.play()
+    .catch(error => console.error("Gagal memutar audio:", error));
 });
     </script>
   </body>
