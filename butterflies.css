@@ -58,6 +58,12 @@ h1 span {
 	animation: flap 0.75s infinite ease-in-out;
 }
 
+h1, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+
 #controls {
 	position: fixed;
 	top: 10px;

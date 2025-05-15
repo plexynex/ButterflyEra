@@ -4,7 +4,7 @@ const pc = butterfliesBackground({
   el: document.getElementById('app'),
   eventsEl: document.body,
   gpgpuSize: 18,
-  background: 0x88CEFF,
+  background: 0x88CF,
   material: 'phong',
   lights: [
     { type: 'ambient', params: [0xffffff, 0.5] },
