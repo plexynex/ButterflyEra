@@ -26,10 +26,22 @@
         document.getElementById('parameter').textContent = decodeURIComponent(namaParam);
       }
 
-      document.body.addEventListener('click', function() {
-        const audio = new Audio('ocrFytBgIFZQVcyrtf8dWMnGnyvdeD9JVOEgCB.m4a');
-        audio.play();
+      let isPlaying = false;
+
+document.body.addEventListener('click', function() {
+  if (!isPlaying) {
+    isPlaying = true;
+    const audio = new Audio('ocrFytBgIFZQVcyrtf8dWMnGnyvdeD9JVOEgCB.m4a');
+    audio.play()
+      .then(() => {
+        isPlaying = false;
+      })
+      .catch(error => {
+        console.error("Gagal memutar audio:", error);
+        isPlaying = false;
       });
+  }
+});
     </script>
   </body>
 </html>
